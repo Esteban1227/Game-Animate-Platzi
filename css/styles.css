@@ -1,0 +1,389 @@
+body {
+  counter-reset: game;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    height: 4px;
+  }
+  5% {
+    -webkit-transform: translate(0px, 2px);
+            transform: translate(0px, 2px);
+    height: 1px;
+  }
+  10% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    height: 4px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    height: 4px;
+  }
+  5% {
+    -webkit-transform: translate(0px, 2px);
+            transform: translate(0px, 2px);
+    height: 1px;
+  }
+  10% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+    height: 4px;
+  }
+}
+
+@-webkit-keyframes layer {
+  0% {
+    bottom: 0;
+  }
+  25% {
+    bottom: -80px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes layer {
+  0% {
+    bottom: 0;
+  }
+  25% {
+    bottom: -80px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+.grass {
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(135deg, #6fc56f 25%, transparent 25%) -50px 0, linear-gradient(-135deg, #6fc56fa8 25%, transparent 25%) -50px 0, linear-gradient(45deg, #6fc56f 25%, transparent 25%), linear-gradient(-45deg, #6fc56f 25%, transparent 25%);
+  background-size: 30px 80px;
+  border-radius: 10px;
+}
+
+.left-ear--outer {
+  background-color: white;
+  border-radius: 90%;
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  left: 10px;
+}
+
+.left-ear--outer .left-ear--inner {
+  background-color: pink;
+  border-radius: 90%;
+  width: 10px;
+  height: 40px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+}
+
+.right-ear--outer {
+  background-color: white;
+  border-radius: 90%;
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  right: 10px;
+}
+
+.right-ear--outer .right-ear--inner {
+  background-color: pink;
+  border-radius: 90%;
+  width: 10px;
+  height: 40px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.head {
+  background-color: white;
+  border-radius: 50%;
+  height: 80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  top: 30px;
+  width: 90%;
+}
+
+.head__eye {
+  background-color: black;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 15px;
+  -webkit-animation-name: blink;
+          animation-name: blink;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.head__eye--left {
+  left: 25px;
+}
+
+.head__eye--right {
+  right: 25px;
+}
+
+.layer-1 {
+  position: absolute;
+  z-index: 1;
+  height: 450px;
+  width: 80px;
+  /* background-color: white; */
+  bottom: 0;
+  right: 60px;
+  -webkit-animation-name: layer;
+          animation-name: layer;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.layer-2 {
+  position: absolute;
+  z-index: 2;
+  height: 450px;
+  width: 80px;
+  /* background-color: white; */
+  bottom: 0;
+  left: 60px;
+  -webkit-animation-name: layer;
+          animation-name: layer;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.layer-4 {
+  position: absolute;
+  z-index: 4;
+  height: 350px;
+  width: 80px;
+  /* background-color: white; */
+  bottom: 0;
+  left: 60px;
+  -webkit-animation-name: layer;
+          animation-name: layer;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.layer-6 {
+  position: absolute;
+  z-index: 6;
+  height: 250px;
+  width: 80px;
+  /* background-color: white; */
+  bottom: 0;
+  right: 10px;
+  -webkit-animation-name: layer;
+          animation-name: layer;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  z-index: 1;
+  width: 100%;
+  height: 80px;
+}
+
+input[type=checkbox]:checked {
+  counter-increment: game;
+}
+
+.total-count::after {
+  content: counter(game);
+}
+
+.container {
+  position: relative;
+  border: 8px solid black;
+  border-radius: 40px;
+  height: 600px;
+  width: 300px;
+  background-color: #CCEFFF;
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.308), 0 15px 12px rgba(0, 0, 0, 0.308);
+          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.308), 0 15px 12px rgba(0, 0, 0, 0.308);
+  overflow: hidden;
+}
+
+.layer-3 {
+  position: absolute;
+  z-index: 3;
+  height: 400px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 220px;
+  background-color: #993d00;
+  -webkit-box-shadow: 0 10px 10px black;
+          box-shadow: 0 10px 10px black;
+  border-radius: 10px;
+}
+
+.layer-5 {
+  position: absolute;
+  z-index: 5;
+  height: 300px;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  background-color: #993d00;
+  -webkit-box-shadow: 0 10px 10px black;
+          box-shadow: 0 10px 10px black;
+  border-radius: 10px;
+}
+
+.layer-7 {
+  position: absolute;
+  z-index: 7;
+  height: 200px;
+  right: 0px;
+  bottom: 0;
+  width: 140px;
+  background-color: #993d00;
+  -webkit-box-shadow: 0 10px 10px black;
+          box-shadow: 0 10px 10px black;
+  border-radius: 10px;
+}
+
+.layer-8 {
+  position: absolute;
+  z-index: 8;
+  height: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 140px;
+  /* background-color: green; */
+}
+
+.layer-8 .circle {
+  background-color: green;
+  width: 100px;
+  height: 200px;
+  /*   */
+  border-radius: 90%;
+  position: absolute;
+}
+
+.layer-8 .circle--left {
+  -webkit-transform: rotate(150deg);
+          transform: rotate(150deg);
+}
+
+.layer-8 .circle--center {
+  left: 0;
+  right: 0;
+  top: -20px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.layer-8 .circle--right {
+  right: 0;
+  -webkit-transform: rotate(210deg);
+          transform: rotate(210deg);
+}
+
+.layer-9 {
+  position: absolute;
+  z-index: 9;
+  height: 100px;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  /* background-color: white; */
+}
+
+.layer-9 .circle {
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  background: white;
+  border-radius: 100px 100px 10px 20px;
+}
+
+.layer-9 .circle--right {
+  width: 80%;
+  height: 60%;
+  bottom: 0;
+  right: 0;
+  background: white;
+  border-radius: 100px;
+}
+
+.layer-10 {
+  position: absolute;
+  z-index: 10;
+  height: 100px;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  /* background-color: white; */
+}
+
+.layer-10 .circle {
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  background: white;
+  border-radius: 100px 100px 10px 20px;
+}
+
+.layer-10 .circle--left {
+  right: 0;
+}
+
+.layer-10 .circle--right {
+  width: 80%;
+  height: 60%;
+  bottom: 0;
+  background: white;
+  border-radius: 100px;
+}
+/*# sourceMappingURL=styles.css.map */

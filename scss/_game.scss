@@ -1,0 +1,134 @@
+.container{
+    position: relative;
+    border: 8px solid black;
+    border-radius: 40px;
+    height: 600px;
+    width: 300px;
+    background-color: #CCEFFF;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.308), 0 15px 12px rgba(0, 0, 0, 0.308);
+    overflow: hidden;
+}
+
+
+//bloque #1
+.layer-3{
+    position: absolute;
+    z-index: 3;
+    height: 400px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 220px;
+    background-color: #993d00;
+    box-shadow: 0 10px 10px black;
+    border-radius: 10px;
+}
+
+.layer-5{
+    position: absolute;
+    z-index: 5;
+    height: 300px;
+    left: 0;
+    bottom: 0;
+    width: 220px;
+    background-color: #993d00;
+    box-shadow: 0 10px 10px black;
+    border-radius: 10px;
+}
+
+.layer-7{
+    position: absolute;
+    z-index: 7;
+    height: 200px;
+    right: 0px;
+    bottom: 0;
+    width: 140px;
+    background-color: #993d00;
+    box-shadow: 0 10px 10px black;
+    border-radius: 10px;
+}
+.layer-8{
+    position: absolute;
+    z-index: 8;
+    height: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    width: 140px;
+    /* background-color: green; */
+    .circle{
+        background-color: green;
+        width: 100px;
+        height: 200px;
+        /*   */
+        border-radius: 90%;
+        position: absolute;
+        &--left{
+            transform: rotate(150deg);
+        }
+        &--center{
+            left: 0;
+            right: 0;
+            top: -20px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+        &--right{
+            right: 0;
+            transform: rotate(210deg); 
+        }
+    }
+}
+.layer-9{
+    position: absolute;
+    z-index: 9;
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    /* background-color: white; */
+    .circle{
+        position: absolute;
+        width: 75%;
+        height: 100%;
+        background: white;
+        border-radius: 100px 100px 10px 20px;
+        &--right{
+            width: 80%;
+            height: 60%;
+            bottom: 0;
+            right: 0;
+            background: white;
+            border-radius: 100px;
+        }
+    }
+}
+.layer-10{
+    position: absolute;
+    z-index: 10;
+    height: 100px;
+    right:0;
+    bottom: 0;
+    width: 100px;
+    /* background-color: white; */
+    .circle{
+        position: absolute;
+        width: 75%;
+        height: 100%;
+        background: white;
+        border-radius: 100px 100px 10px 20px;
+        &--left{
+            right: 0;
+        }
+        &--right{
+            width: 80%;
+            height: 60%;
+            bottom: 0;
+            background: white;
+            border-radius: 100px;
+        }
+    }
+}
+
